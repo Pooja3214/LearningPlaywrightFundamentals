@@ -1,7 +1,7 @@
 {
   "name": "learningplaywrightfundamentals",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repository contains source code for learning the fundamentals of [Playwright](https://playwright.dev/), a powerful end-to-end testing framework for modern web applications.",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
@@ -11,5 +11,21 @@
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.1.2"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.62.1",
+    "playwright-core": "^1.62.1",
+    "undici-types": "^8.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pooja3214/LearningPlaywrightFundamentals.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pooja3214/LearningPlaywrightFundamentals/issues"
+  },
+  "homepage": "https://github.com/Pooja3214/LearningPlaywrightFundamentals#readme"
 }
