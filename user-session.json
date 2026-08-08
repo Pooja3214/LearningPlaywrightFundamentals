@@ -1,0 +1,15 @@
+{
+  "cookies": [
+    {
+      "name": "PHPSESSID",
+      "value": "jlg2sdd9aij1qgfpspdqeiv99m2cgip5",
+      "domain": "katalon-demo-cura.herokuapp.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

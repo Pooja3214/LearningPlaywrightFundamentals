@@ -7,11 +7,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@faker-js/faker": "^10.5.0",
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.1.2"
+    "@types/node": "^26.1.2",
+    "allure-playwright": "^3.10.2"
   },
   "directories": {
     "test": "tests"
