@@ -63,6 +63,8 @@ LearningPlaywrightFundamentals/
    npx playwright install
    ```
 
+> **Note:** The project uses `@faker-js/faker` for test data generation, `allure-playwright` for Allure reports, and a custom reporter (`utils/CustomReporter.ts`) for lightweight reporting.
+
 ## Running Tests
 
 - Run all tests:
@@ -85,12 +87,37 @@ LearningPlaywrightFundamentals/
   npx playwright show-report
   ```
 
+- Run tests with specific tags:
+  ```bash
+  npx playwright test --grep "@smoke"
+  ```
+
+## Session Storage & Reuse
+
+The project demonstrates how to save and reuse browser session state to skip repeated logins:
+
+- **Save session** — `tests/04_Session_Storage/247_SessionStorage.spec.ts` logs into a demo app and saves cookies/localStorage to `./user-session.json`.
+- **Reuse session** — `tests/04_Session_Storage/249_TestVWODashboard_NoCustomReport.spec.ts` and `tests/05_Allure_Reporting/248_TestVWODashboard.spec.ts` load the saved session via `test.use({ storageState: "./user-session.json" })` to access authenticated pages directly.
+
+## Reporting
+
+The project supports multiple reporting mechanisms:
+
+- **Allure Reporting** — `tests/05_Allure_Reporting/` contains tests instrumented with Allure-compatible steps and attachments (screenshots). Results are written to `allure-results/`.
+- **Custom Reporter** — `utils/CustomReporter.ts` is a lightweight custom Playwright reporter that generates `tta-report/`.
+- **Built-in HTML Report** — Run `npx playwright show-report` to view the default HTML report with traces and screenshots.
+
 ## Configuration
 
-The project is configured to run tests on three browsers:
-- Chromium (Google Chrome)
-- Firefox
-- WebKit (Safari)
+The project is configured to run tests on Chromium (with incognito mode enabled). Firefox and WebKit projects are currently commented out.
+
+Key settings in `playwright.config.ts`:
+- `headless: false` — Browser is visible during execution
+- `screenshot: 'on'` — Captures screenshots for every test
+- `video: 'on'` — Records video for every test
+- `trace: 'on'` — Collects traces for debugging
+- `fullyParallel: false` — Tests run sequentially
+- Custom reporter: `utils/CustomReporter.ts`
 
 Configuration can be modified in `playwright.config.ts`.
 
