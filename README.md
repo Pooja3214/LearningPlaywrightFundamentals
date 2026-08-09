@@ -32,6 +32,10 @@ LearningPlaywrightFundamentals/
 │   ├── 23_Advance_Framework/
 │   ├── Projects/
 │   └── Tasks/
+│       ├── 6_July_Task/
+│       ├── 10_July/
+│       ├── 17th_July/
+│       └── 19_July/
 ├── utils/                          # Utility scripts (e.g., CustomReporter.ts)
 ├── playwright.config.ts            # Playwright configuration
 ├── package.json                    # Project dependencies
