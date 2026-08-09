@@ -103,6 +103,19 @@ The project demonstrates how to save and reuse browser session state to skip rep
 - **Save session** — `tests/04_Session_Storage/247_SessionStorage.spec.ts` logs into a demo app and saves cookies/localStorage to `./user-session.json`.
 - **Reuse session** — `tests/04_Session_Storage/249_TestVWODashboard_NoCustomReport.spec.ts` and `tests/05_Allure_Reporting/248_TestVWODashboard.spec.ts` load the saved session via `test.use({ storageState: "./user-session.json" })` to access authenticated pages directly.
 
+## Dropdown & Select Handling
+
+The project includes dedicated examples for handling various dropdown and select box patterns:
+
+- **Basic Select** — `tests/08_Web_Select_Frames_Iframe/259_Select.spec.ts` demonstrates native HTML `<select>` element interaction using `page.selectOption()`.
+- **Custom Dropdowns** — `tests/08_Web_Select_Frames_Iframe/260_Custom_DD_Select.spec.ts` shows how to interact with custom-built dropdowns (e.g., language and experience selectors) using locator clicks and `getByRole`/`getByText`.
+- **Advanced Select Components** — `tests/08_Web_Select_Frames_Iframe/261_Advance_Select_Pro.spec.ts` covers complex React-Select-style components including:
+  - Single searchable select
+  - Multi-select with removable chips
+  - Creatable multi-select (type & press Enter)
+  - Grouped/categorised options
+  - Async dropdowns with fetched results
+
 ## Reporting
 
 The project supports multiple reporting mechanisms:
