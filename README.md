@@ -35,8 +35,9 @@ LearningPlaywrightFundamentals/
 │       ├── 6_July_Task/
 │       ├── 10_July/
 │       ├── 17th_July/
-│               ├── 20_July/
-        └── 19_July/
+│       ├── 19_July/
+│       ├── 20_July/
+│       └── 22_July/
 ├── utils/                          # Utility scripts (e.g., CustomReporter.ts)
 ├── playwright.config.ts            # Playwright configuration
 ├── package.json                    # Project dependencies
@@ -117,6 +118,24 @@ The project includes dedicated examples for handling various dropdown and select
   - Grouped/categorised options
   - Async dropdowns with fetched results
 
+## Frame & Iframe Handling
+
+The project includes examples for interacting with single, multiple, and nested iframes:
+
+- **Single Iframe** — `tests/09_Frame_Iframe/262_Iframe.spec.ts` demonstrates filling a vehicle registration form inside a single iframe using `page.frameLocator()`.
+- **Multiple Frames** — `tests/09_Frame_Iframe/263_frameSet.spec.ts` shows how to handle pages with multiple `<frame>` elements, iterate over frames, and interact with each frame by name.
+- **Nested Iframes** — `tests/09_Frame_Iframe/264_Iframe_part2.spec.ts` covers chaining `frameLocator()` calls to interact with deeply nested iframes.
+
+## Keyboard, Hover, Drag & Drop
+
+Examples for advanced mouse and keyboard interactions:
+
+- **Keyboard Events** — `tests/10_Keyboard_Hover_Drag_Drop/265_Keyboard.spec.ts` demonstrates pressing individual keys, key combinations (`Shift+O`), and using `keyboard.up()` / `keyboard.down()`.
+- **Hover Actions** — `tests/10_Keyboard_Hover_Drag_Drop/266_SpiceJet_Hover.spec.ts` shows hovering over menu items before clicking sub-options.
+- **Drag and Drop** — `tests/10_Keyboard_Hover_Drag_Drop/267_Drag_Drop.spec.ts` performs basic element-to-element drag-and-drop.
+- **Advanced Drag and Drop** — `tests/10_Keyboard_Hover_Drag_Drop/268_Advance_Drag_Drop.spec.ts` demonstrates dragging cards between columns (e.g., Kanban board) and includes commented manual mouse path logic for finicky DnD libraries.
+- **Context Menu (Right Click)** — `tests/10_Keyboard_Hover_Drag_Drop/269_Context_Menu.spec.ts` shows right-clicking to open a context menu and selecting an option.
+
 ## Reporting
 
 The project supports multiple reporting mechanisms:
@@ -157,3 +176,4 @@ Playwright enables reliable end-to-end testing for modern web apps. It supports 
 ## License
 
 ISC
+
