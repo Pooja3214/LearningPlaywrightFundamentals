@@ -135,6 +135,18 @@ Examples for advanced mouse and keyboard interactions:
 - **Drag and Drop** — `tests/10_Keyboard_Hover_Drag_Drop/267_Drag_Drop.spec.ts` performs basic element-to-element drag-and-drop.
 - **Advanced Drag and Drop** — `tests/10_Keyboard_Hover_Drag_Drop/268_Advance_Drag_Drop.spec.ts` demonstrates dragging cards between columns (e.g., Kanban board) and includes commented manual mouse path logic for finicky DnD libraries.
 - **Context Menu (Right Click)** — `tests/10_Keyboard_Hover_Drag_Drop/269_Context_Menu.spec.ts` shows right-clicking to open a context menu and selecting an option.
+- **Reference Guide** — `tests/10_Keyboard_Hover_Drag_Drop/learning.md` is a quick-reference cheat-sheet covering the Keyboard API, Mouse API, hover, drag-and-drop, and key combinations.
+
+## JavaScript Alerts & Dialogs
+
+Examples for handling native browser dialogs (alerts, confirms, and prompts):
+
+- **JS Alerts** — `tests/11_JS_Alerts/270_JS.spec.ts` demonstrates handling three dialog types on [The Internet](https://the-internet.herokuapp.com/javascript_alerts):
+  - **Alert** — simple alert with `dialog.accept()`.
+  - **Confirm** — confirmation dialog with `dialog.accept()` or `dialog.dismiss()`.
+  - **Prompt** — input dialog where text is supplied via `dialog.accept(inputText)` and the page result is asserted.
+
+> Dialog handlers must be registered **before** the action that triggers the dialog (using `page.once('dialog', ...)`).
 
 ## Reporting
 
