@@ -158,6 +158,17 @@ Examples for locating, interacting with, and extracting data from SVG elements:
 - **SVG Widget Interaction** — `tests/12_Handle_SVG/272_SVG_Practice.spec.ts` covers interacting with SVG shapes (clicking a circle, asserting output text), handling radio buttons within SVG widgets, and iterating over SVG bar elements to read `data-*` attributes.
 - **Advanced SVG Maps** — `tests/12_Handle_SVG/273_Advance_SVG.spec.ts` demonstrates handling complex SVG maps (SimpleMaps) by locating `<path>` elements inside `<svg>`, iterating over states, filtering by class, and clicking specific regions (e.g., selecting Rajasthan).
 
+## Shadow DOM Handling
+
+Examples for locating and interacting with elements inside Shadow DOM:
+
+- **Shadow DOM Form Interaction** — `tests/13_Shadow_DOM/274_Shadow_DOM.spec.ts` demonstrates handling elements encapsulated in shadow DOM:
+  - Locating shadow host elements using `getByTestId()` and chaining locators inside the shadow tree.
+  - Filling input fields (`email`, `password`) and clicking submit buttons within shadow DOM.
+  - Asserting status text returned from the shadow form.
+  - Interacting with a counter component (`Increment` buttons) and asserting the updated counter value.
+  - Working with **nested shadow DOM** — locating deeply nested shadow elements and filling forms inside nested shadow hosts.
+
 ## Tasks
 
 The `tests/Tasks/` folder contains practical assignments that apply the learned concepts:
