@@ -37,7 +37,9 @@ LearningPlaywrightFundamentals/
 │       ├── 17th_July/
 │       ├── 19_July/
 │       ├── 20_July/
-│       └── 22_July/
+│       ├── 22_July/
+│       ├── 24_July/
+│       └── 27_July/
 ├── utils/                          # Utility scripts (e.g., CustomReporter.ts)
 ├── playwright.config.ts            # Playwright configuration
 ├── package.json                    # Project dependencies
@@ -147,6 +149,14 @@ Examples for handling native browser dialogs (alerts, confirms, and prompts):
   - **Prompt** — input dialog where text is supplied via `dialog.accept(inputText)` and the page result is asserted.
 
 > Dialog handlers must be registered **before** the action that triggers the dialog (using `page.once('dialog', ...)`).
+
+## SVG Handling
+
+Examples for locating, interacting with, and extracting data from SVG elements:
+
+- **Basic SVG Search** — `tests/12_Handle_SVG/271_SVG.spec.ts` demonstrates searching on Flipkart using an SVG search icon (`page.locator('svg')`) and extracting product titles.
+- **SVG Widget Interaction** — `tests/12_Handle_SVG/272_SVG_Practice.spec.ts` covers interacting with SVG shapes (clicking a circle, asserting output text), handling radio buttons within SVG widgets, and iterating over SVG bar elements to read `data-*` attributes.
+- **Advanced SVG Maps** — `tests/12_Handle_SVG/273_Advance_SVG.spec.ts` demonstrates handling complex SVG maps (SimpleMaps) by locating `<path>` elements inside `<svg>`, iterating over states, filtering by class, and clicking specific regions (e.g., selecting Rajasthan).
 
 ## Reporting
 
