@@ -158,6 +158,12 @@ Examples for locating, interacting with, and extracting data from SVG elements:
 - **SVG Widget Interaction** — `tests/12_Handle_SVG/272_SVG_Practice.spec.ts` covers interacting with SVG shapes (clicking a circle, asserting output text), handling radio buttons within SVG widgets, and iterating over SVG bar elements to read `data-*` attributes.
 - **Advanced SVG Maps** — `tests/12_Handle_SVG/273_Advance_SVG.spec.ts` demonstrates handling complex SVG maps (SimpleMaps) by locating `<path>` elements inside `<svg>`, iterating over states, filtering by class, and clicking specific regions (e.g., selecting Rajasthan).
 
+## Tasks
+
+The `tests/Tasks/` folder contains practical assignments that apply the learned concepts:
+
+- **24 July — Flipkart Cheapest Price Finder** — `tests/Tasks/24_July/Flipkart_CheapPrice_svg.spec.ts` searches for "macmini" on Flipkart using an SVG search icon, extracts all product titles and prices, and programmatically determines the cheapest price by parsing and comparing numeric values.
+
 ## Reporting
 
 The project supports multiple reporting mechanisms:
