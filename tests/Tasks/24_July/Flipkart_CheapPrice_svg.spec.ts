@@ -13,31 +13,51 @@ test.describe('Find cheapest price macmini in flipkart', ()=>{
 
     test('Find price and titles of all',async({page})=>{
        
+        //Search macmini 
         await page.locator('input[name="q"]').fill("macmini");
        
+        //click on search svg element
         const svgElements: Locator = page.locator('svg');
         await svgElements.first().click();
 
-        const allTitles:Locator= page.locator("//div[contains(@data-id,'CPU') or contains(@data-id,'ACC') or contains(@data-id,'COM') or contains(@data-id,'MP')]/div/a[2][contains(@href,'/p/') and @title]");
-        const allPrice:Locator= page.locator("//div[contains(@data-id,'CPU') or contains(@data-id,'ACC') or contains(@data-id,'COM') or contains(@data-id,'MP')]/div/a[3]");
+        //wait for page to load
+        await page.waitForTimeout(5000);
+
+        // get all the product titles
+        const allTitles= await page.locator
+        ("//div[contains(@data-tkid,'CPU') or contains(@data-tkid,'ACC') or contains(@data-tkid,'COM') or contains(@data-id,'MP')]//a[@title]"
+
+        ).all();
+
+
+        // Print all product titles
+        for(let product of allTitles){
+            const productTitles= await product.getAttribute("title");
+            console.log(productTitles);
+            
+        }
+
+        //Get all product price
+        const allPrice= await page.locator(
+            "//div[contains(@data-id,'CPU') or contains(@data-id,'ACC') or contains(@data-id,'COM') or contains(@data-id,'MP')]/div/a[3]"
+        ).allTextContents();
     
-        //print all product titles
-        // const productTitles:string[] = await allTitles.allTextContents();
-        // console.log(productTitles);
+       let minPrice= Infinity;
 
-         const counts = await allTitles.count();
 
-        // for (let i = 0; i < productTitles.length; i++) {
-        //     console.log(productTitles[i]);
-        // }
-        console.log("Count:", await allTitles.count());
+       //Print min price
+       for(let i=0;i<allPrice.length;i++){
+        const currentPrice= Number(allPrice[i].replace(/[₹,]/g,""));
 
-// console.log("Total products:", count);
+        if(currentPrice<minPrice){
+            minPrice= currentPrice;
+        }
 
-for (let i = 0; i < counts; i++) {
-    const title = await allTitles.nth(i).tex;
-    console.log(title);
-}  
+
+       }
+
+         console.log("Minimum Price:" + minPrice);
+         
     
     })
 
