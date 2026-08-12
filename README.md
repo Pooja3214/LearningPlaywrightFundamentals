@@ -44,6 +44,7 @@ LearningPlaywrightFundamentals/
 ├── playwright.config.ts            # Playwright configuration
 ├── package.json                    # Project dependencies
 ├── package-lock.json               # Lock file for dependencies
+├── tsconfig.json                   # TypeScript configuration
 ├── .gitignore                      # Git ignore rules
 └── user-session.json               # Session storage state
 ```
@@ -168,6 +169,13 @@ Examples for locating and interacting with elements inside Shadow DOM:
   - Asserting status text returned from the shadow form.
   - Interacting with a counter component (`Increment` buttons) and asserting the updated counter value.
   - Working with **nested shadow DOM** — locating deeply nested shadow elements and filling forms inside nested shadow hosts.
+
+## File Upload
+
+Examples for handling single and multiple file uploads using Playwright:
+
+- **Single File Upload** — `tests/14_FileUpload/275_File_Upload.spec.ts` demonstrates uploading a local file to a standard HTML file input on [The Internet](https://the-internet.herokuapp.com/upload) using `page.setInputFiles()`. It asserts the upload success message and the uploaded filename displayed on the page.
+- **Multiple File Upload** — `tests/14_FileUpload/276_Multiple_File_Upload.spec.ts` shows uploading multiple files (including generated in-memory buffers with custom filenames and MIME types) to a complex multi-file upload component. This pattern is useful when you need to test uploads without relying on physical files on disk.
 
 ## Tasks
 

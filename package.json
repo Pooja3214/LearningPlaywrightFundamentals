@@ -11,7 +11,7 @@
   "devDependencies": {
     "@faker-js/faker": "^10.5.0",
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.1.2",
+    "@types/node": "^26.2.0",
     "allure-playwright": "^3.10.2"
   },
   "directories": {
