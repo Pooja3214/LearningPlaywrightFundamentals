@@ -39,7 +39,8 @@ LearningPlaywrightFundamentals/
 │       ├── 20_July/
 │       ├── 22_July/
 │       ├── 24_July/
-│       └── 27_July/
+│       ├── 27_July/
+│       └── 29_July/
 ├── utils/                          # Utility scripts (e.g., CustomReporter.ts)
 ├── playwright.config.ts            # Playwright configuration
 ├── package.json                    # Project dependencies
@@ -177,11 +178,26 @@ Examples for handling single and multiple file uploads using Playwright:
 - **Single File Upload** — `tests/14_FileUpload/275_File_Upload.spec.ts` demonstrates uploading a local file to a standard HTML file input on [The Internet](https://the-internet.herokuapp.com/upload) using `page.setInputFiles()`. It asserts the upload success message and the uploaded filename displayed on the page.
 - **Multiple File Upload** — `tests/14_FileUpload/276_Multiple_File_Upload.spec.ts` shows uploading multiple files (including generated in-memory buffers with custom filenames and MIME types) to a complex multi-file upload component. This pattern is useful when you need to test uploads without relying on physical files on disk.
 
+## File Download
+
+Examples for handling file downloads using Playwright:
+
+- **File Download** — `tests/15_File_Download/277_File_Download.spec.ts` demonstrates handling multiple file downloads on [The Testing Academy Playground](https://app.thetestingacademy.com/playwright/widgets/upload-download). It uses `page.waitForEvent("download")` to intercept static, JSON, and text file downloads triggered by buttons, then saves them to the `./output/` directory using `download.saveAs()`.
+
+## Scroll to Element
+
+Examples for scrolling and interacting with elements that require viewport visibility:
+
+- **Scroll to View & Lazy Loading** — `tests/16_Scroll_toElement/278_ScrollToView.spec.ts` demonstrates scrolling strategies on [The Testing Academy Playground](https://app.thetestingacademy.com/playwright/widgets/scroll). It uses `scrollIntoViewIfNeeded()` to bring elements into the viewport, JavaScript-based scrolling via `page.evaluate()`, and verifies lazy-loaded lists by polling the element count until it grows past the initial value.
+
 ## Tasks
 
 The `tests/Tasks/` folder contains practical assignments that apply the learned concepts:
 
 - **24 July — Flipkart Cheapest Price Finder** — `tests/Tasks/24_July/Flipkart_CheapPrice_svg.spec.ts` searches for "macmini" on Flipkart using an SVG search icon, extracts all product titles and prices, and programmatically determines the cheapest price by parsing and comparing numeric values.
+- **29 July — File Upload & Download Tasks** — `tests/Tasks/29_July/` contains practical assignments for file interactions:
+  - **Upload Photo** — `Upload_Photo.spec.ts` demonstrates uploading a profile photo to [The Testing Academy Student Settings](https://app.thetestingacademy.com/student/settings) using `page.setInputFiles()`.
+  - **Download File** — `download_file.spec.ts` demonstrates file download handling on [QAJobFit Dashboard](https://qajobfit.com/dashboard?tab=builder).
 
 ## Reporting
 
