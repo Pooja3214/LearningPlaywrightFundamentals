@@ -42,6 +42,8 @@ LearningPlaywrightFundamentals/
 │       ├── 27_July/
 │       └── 29_July/
 ├── utils/                          # Utility scripts (e.g., CustomReporter.ts)
+├── out/                            # Failure screenshots (auto-generated)
+├── output/                         # Downloaded files from tests
 ├── playwright.config.ts            # Playwright configuration
 ├── package.json                    # Project dependencies
 ├── package-lock.json               # Lock file for dependencies
@@ -100,6 +102,14 @@ LearningPlaywrightFundamentals/
 - Run tests with specific tags:
   ```bash
   npx playwright test --grep "@smoke"
+  ```
+
+- Run tests by priority (via npm scripts):
+  ```bash
+  npm run test:p1   # Runs tests tagged @p1
+  npm run test:p2   # Runs tests tagged @p2
+  npm run test:p3   # Runs tests tagged @p3
+  npm run test:priority  # Runs p1, p2, and p3 sequentially
   ```
 
 ## Session Storage & Reuse
@@ -228,7 +238,7 @@ The project supports multiple reporting mechanisms:
 
 ## Configuration
 
-The project is configured to run tests on Chromium (with incognito mode enabled). Firefox and WebKit projects are currently commented out.
+The project is configured to run tests on Chromium using Firefox device settings. Other browser projects (Firefox, WebKit, mobile, branded browsers) are currently commented out.
 
 Key settings in `playwright.config.ts`:
 - `headless: false` — Browser is visible during execution

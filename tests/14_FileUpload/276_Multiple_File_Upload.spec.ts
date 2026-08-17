@@ -29,12 +29,10 @@ test.describe('FileUpload handling', () => {
 
 
 
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(2000
+            
+        );
 
     })
-
-
-
-
 
     });
