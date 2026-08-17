@@ -190,6 +190,25 @@ Examples for scrolling and interacting with elements that require viewport visib
 
 - **Scroll to View & Lazy Loading** — `tests/16_Scroll_toElement/278_ScrollToView.spec.ts` demonstrates scrolling strategies on [The Testing Academy Playground](https://app.thetestingacademy.com/playwright/widgets/scroll). It uses `scrollIntoViewIfNeeded()` to bring elements into the viewport, JavaScript-based scrolling via `page.evaluate()`, and verifies lazy-loaded lists by polling the element count until it grows past the initial value.
 
+## Expect Assertions
+
+Examples for Playwright's `expect` assertion API covering basic and advanced validation patterns:
+
+- **Basic Assertions** — `tests/17_Expect_Assertions/279_Expect.spec.ts` demonstrates core matchers such as `toBe`, `toBeFalsy`, `toBeTruthy`, `toBeNull`, `toBeGreaterThan`, and `toEqual` for both primitives and objects.
+- **Page & Locator Assertions** — `tests/17_Expect_Assertions/280_Expect.spec.ts` and `281_Expect.spec.ts` cover web-first assertions like `toHaveTitle`, `toBeVisible`, `toHaveText`, and `toHaveValue`.
+- **Project-Level Assertions** — `tests/17_Expect_Assertions/282_Project.spec.ts` shows assertion patterns applied across project configurations.
+- **Cheatsheet** — `tests/17_Expect_Assertions/283_Expect.cheatsheet.md` is a quick-reference guide for commonly used expect matchers.
+
+## Test Hooks
+
+Examples for test lifecycle management, annotations, and organizing tests with hooks and describe blocks:
+
+- **Test Annotations** — `tests/18_Test_hooks/284_Test_Hook.spec.ts` demonstrates built-in test annotations: `test.skip()` for unsupported browsers, `test.slow()` for slow tests, `test.fixme()` for known broken tests, and `test.fail()` for expected failures.
+- **Grouping & Nesting** — `tests/18_Test_hooks/287_Group.spec.ts` and `289_TestDescribe.spec.ts` show how to group related tests using `test.describe()` and nested describe blocks.
+- **Before/After Hooks** — `tests/18_Test_hooks/288_Befre_After.spec.ts` covers `test.beforeAll`, `test.beforeEach`, `test.afterAll`, and `test.afterEach` for setup and teardown logic.
+- **Test Priority** — `tests/18_Test_hooks/290_TestPriority.spec.ts` demonstrates ordering and prioritizing test execution.
+- **Reference Guides** — `tests/18_Test_hooks/285_Chrome_Arg_List.md` lists useful Chrome launch arguments, and `286_Test_Hook_Cheatsheet.md` provides a quick-reference for hooks and annotations.
+
 ## Tasks
 
 The `tests/Tasks/` folder contains practical assignments that apply the learned concepts:
