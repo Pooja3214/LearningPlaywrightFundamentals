@@ -1,38 +1,29 @@
 {
   "name": "learningplaywrightfundamentals",
   "version": "1.0.0",
-  "description": "This repository contains source code for learning the fundamentals of [Playwright](https://playwright.dev/), a powerful end-to-end testing framework for modern web applications.",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test:p1": "npx playwright test --grep@p1",
-    "test:p2": "npx playwright test --grep@p2",
-    "test:p3": "npx playwright test --grep@p3",
+    "test:p1": "npx playwright test --grep @p1",
+    "test:p2": "npx playwright test --grep @p2",
+    "test:p3": "npx playwright test --grep @p3",
     "test:priority": "npm run test:p1 && npm run test:p2 && npm run test:p3"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "devDependencies": {
     "@faker-js/faker": "^10.5.0",
-    "@playwright/test": "^1.62.1",
-    "@types/node": "^26.2.0",
-    "allure-playwright": "^3.10.2"
-  },
-  "directories": {
-    "test": "tests"
+    "@playwright/test": "^1.61.1",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^26.1.1",
+    "allure-js-commons": "^3.10.2",
+    "allure-playwright": "^3.10.2",
+    "dotenv": "^17.4.2",
+    "exceljs": "^4.4.0",
+    "mysql2": "^3.23.2"
   },
   "dependencies": {
-    "playwright": "^1.62.1",
-    "playwright-core": "^1.62.1",
-    "undici-types": "^8.3.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Pooja3214/LearningPlaywrightFundamentals.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Pooja3214/LearningPlaywrightFundamentals/issues"
-  },
-  "homepage": "https://github.com/Pooja3214/LearningPlaywrightFundamentals#readme"
+    "js-yaml": "^5.3.0"
+  }
 }
