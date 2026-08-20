@@ -219,6 +219,27 @@ Examples for test lifecycle management, annotations, and organizing tests with h
 - **Test Priority** — `tests/18_Test_hooks/290_TestPriority.spec.ts` demonstrates ordering and prioritizing test execution.
 - **Reference Guides** — `tests/18_Test_hooks/285_Chrome_Arg_List.md` lists useful Chrome launch arguments, and `286_Test_Hook_Cheatsheet.md` provides a quick-reference for hooks and annotations.
 
+## Data-Driven Testing
+
+Examples for running the same test against multiple data sets:
+
+- **JSON Data Sources** — `tests/19_Data_Driven_Testing/294_LoginTest.spec.ts` loads credentials from `test-data/login.json`, `298_JSON_DDT.spec.ts` imports `test-data/registration-data.json`, and `291_DDT.spec.ts` uses a modern `import ... with { type: 'json' }` to read `293_Users.json`. `292_TestData.json` / `293_Users.json` are plain JSON fixtures.
+- **In-Code Test Data** — `tests/19_Data_Driven_Testing/296_DDT_JSON_Array.spec.ts` defines an array of objects (valid/invalid credentials) and generates one test per entry with a `for...of` loop.
+- **CSV Data** — `tests/19_Data_Driven_Testing/297_DDT_CSV.spec.ts` reads rows from `test-data/login-data.csv` using a custom `util/csvReader.ts` and creates one test per row.
+- **YAML Data** — `tests/19_Data_Driven_Testing/299_DDT_YAML.spec.ts` parses `test-data/login-data.yml` via `util/yamlReader.ts` (keeping real booleans).
+- **Excel Data** — `tests/19_Data_Driven_Testing/301_DDT_XLSX.spec.ts` loads rows from `test-data/login-data.xlsx` using `exceljs` via `util/excelReader.ts`; the sheet can be regenerated with `node tests/19_Data_Driven_Testing/util/generateExcel.js`.
+- **MySQL Data** — `tests/19_Data_Driven_Testing/300_DDT_MySQL.spec.ts` fetches rows from a `login_data` table using `util/dbReader.ts` (enabled by setting `MYSQL_*` vars in `.env`; import `test-data/login-data.sql` first). Rows are executed as `test.step()` inside a single test because DB reads are async.
+- **FakerJS Random Data** — `tests/19_Data_Driven_Testing/302_DDT_FakerJS.spec.ts` generates a fake user inline, and `303_DDT_FakerJS_Advance.spec.ts` builds a `generateUser()` helper with `faker.person`, `faker.internet`, and `faker.phone`. `304_DDT_FakeJS.spec.ts` is another faker-based example.
+- **File System** — `tests/19_Data_Driven_Testing/295_Read_Write_FileSystem.ts` shows reading a JSON file with `fs.readFileSync` and writing `output.json` with `fs.writeFileSync`.
+
+## Page Object Model (POM)
+
+Examples comparing plain tests against the Page Object Model pattern:
+
+- **Without POM** — `tests/20_Page_Object_Model/305_No.POM.spec.ts` keeps locators inline in the test body.
+- **With POM** — `tests/20_Page_Object_Model/306_POM.spec.ts` uses the `LoginPage` class (`tests/20_Page_Object_Model/LoginPage.ts`) to encapsulate locators and actions like `goto()` and `login()`, then asserts the page title.
+- **Page Classes** — `tests/20_Page_Object_Model/Inventory.ts` and `LoginPageSnapLocator.ts` define reusable locator collections (e.g., add-to-cart buttons, product titles) with `getByText` / `getByRole` / `getByTestId` and fallback `.or()` chains.
+
 ## Tasks
 
 The `tests/Tasks/` folder contains practical assignments that apply the learned concepts:
